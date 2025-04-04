@@ -1,6 +1,6 @@
 # sam2 experiments
 
-## local setup
+## setup
 
 ### environment
 - デモ: https://sam2.metademolab.com/
@@ -23,12 +23,28 @@ cd ..
 ### notebookを動かす
 `notebooks/image_predictor_example.ipynb`
 
-### 
-my_sam2_experiment/内に
-- sam2.1_hiera_t.yaml
-- sam2.1_hiera_tiny.pt
-- train.csv
-- images/
-- masks/
-- 学習ファイル（python）
+## fine-tuning
+sam2/my_sam2_experiment/
+  ├─ images/
+  │   └─ png, jpg
+  ├─ masks/
+  │   └─ png, jpg
+  ├─ train.csv
+  └─ finetune_sam2.py
+  ├─ sam2.1_hiera_t.yaml
+  └─ sam2.1_hiera_tiny.pt
 を用意
+
+- sam2/sam2/内に `sam2.1_hiera_t.yaml` を追加
+
+Python 3.10.16
+
+```
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+pip install opencv-python matplotlib scikit-learn pandas
+```
+
+```
+cd my_sam2_experiment
+python finetune_sam2.py
+```
