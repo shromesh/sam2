@@ -8,11 +8,13 @@
 - 論文: https://arxiv.org/abs/2408.00714
 
 ```
-cd sam2
-python3.10 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-pip install -e ".[notebooks]"
+pyenv install 3.11.11 && \
+cd sam2 && \
+pyenv local 3.11.11 && \
+python -m venv .venv && \
+source .venv/bin/activate && \
+pip install -e . && \
+pip install -e ".[notebooks]" && \
 cd checkpoints && \
 ./download_ckpts.sh && \
 cd ..
@@ -20,3 +22,13 @@ cd ..
 
 ### notebookを動かす
 `notebooks/image_predictor_example.ipynb`
+
+### 
+my_sam2_experiment/内に
+- sam2.1_hiera_t.yaml
+- sam2.1_hiera_tiny.pt
+- train.csv
+- images/
+- masks/
+- 学習ファイル（python）
+を用意
