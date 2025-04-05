@@ -161,8 +161,8 @@ def main():
             print(f"[Step {step}] loss={loss.item():.4f}, IoU={iou.item():.3f}")
 
     # 学習後のモデルを保存
-    torch.save(predictor.model.state_dict(), "fine_tuned_sam2_one_sample.torch")
-    print("Done. 重みを fine_tuned_sam2_one_sample.torch に保存しました。")
+    torch.save(predictor.model.state_dict(), "fine_tuned_sam2_one_sample.pt")
+    print("Done. 重みを fine_tuned_sam2_one_sample.pt に保存しました。")
 
 
 if __name__ == "__main__":
